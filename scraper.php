@@ -45,7 +45,7 @@ $BaseLink	=	'http://202.61.43.40:8080/';
 					//	Visit link inside 'View' button
 					$DetailPg	=	file_get_html($URL);
 		  			
-					if ($DetailPg!= null) {
+					if ($DetailPg!= null || $DetailPg!= "http://202.61.43.40:8080/index.php?r=site/profile&CASECODE=") {
 						//	Assign fields to varilables
 							//This is for Case Details
 									
