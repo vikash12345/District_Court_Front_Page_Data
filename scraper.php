@@ -41,7 +41,7 @@ $BaseLink	=	'http://202.61.43.40:8080/';
           {	
 		   $URL = $data[$loopo];
 		  
-		if ($DetailPg!= null || $DetailPg!= "http://202.61.43.40:8080/index.php?r=site/profile&CASECODE=") {
+		if ($URL != null || $URL != "http://202.61.43.40:8080/index.php?r=site/profile&CASECODE=")
 			{
 					//	Visit link inside 'View' button
 					$DetailPg	=	file_get_html($URL);
