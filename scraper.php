@@ -36,7 +36,7 @@ $loop = 3;
 					$CaseValue	=	$element->find('./td[5]/button', 0);
 					$CaseLinkR	=	$BaseLink . $CaseValue->attr['value'];
 					$CaseLink	=	str_replace("amp;", "", $CaseLinkR);
-          echo "$CaseLink\n"
+          echo "$CaseLinkR\n"
 					
 	 }
 	}}
