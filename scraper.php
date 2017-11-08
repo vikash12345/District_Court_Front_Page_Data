@@ -2,7 +2,7 @@
 require 		'scraperwiki.php';
 require 		'scraperwiki/simple_html_dom.php';
 $BaseLink	=	'http://202.61.43.40:8080/';
-	$SiteURL	=	'http://202.61.43.40:8080/index.php?r=site%2Fsearchbyvalue&page=0';
+	$SiteURL	=	'http://202.61.43.40:8080/index.php?r=site%2Fsearchbyfir&page=0';
 	sleep(5);
 	$Pagination = 	file_get_html($SiteURL);
 	$numberforloop = $Pagination->find("//*[@id='w0']/div/b[2]",0)->plaintext;
@@ -16,7 +16,7 @@ $BaseLink	=	'http://202.61.43.40:8080/';
 	
 	//	Page pagination
 	for($PageLoop = 1; $PageLoop < $loop; $PageLoop++){
-	$FinalURL  		=  'http://202.61.43.40:8080/index.php?r=site%2Fsearchbyvalue&page='.$PageLoop;
+	$FinalURL  		=  'http://202.61.43.40:8080/index.php?r=site%2Fsearchbyfir&page='.$PageLoop;
 		$Html		=	file_get_html($FinalURL);
 		sleep(10);
 		$RowNumb	=	-1;
