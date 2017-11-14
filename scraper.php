@@ -17,11 +17,12 @@ $BaseLink	=	'http://202.61.43.40:8080/';
 	
 	//	Page pagination
 	for($PageLoop = 52; $PageLoop < $loop; $PageLoop++){
-	$FinalURL  		=  'http://202.61.43.40:8080/index.php?r=site%2Fsearchbyfir&page='.$PageLoop;
+		
+		$FinalURL  		=  'http://202.61.43.40:8080/index.php?r=site%2Fsearchbyfir&page='.$PageLoop;
+		echo "Page No = > " . "$PageLoop.\n";
 		$Html		=	file_get_html($FinalURL);
 		sleep(10);
 		$RowNumb	=	-1;
-		echo "Page No = > " . "$PageLoop.\n";
 		if ($Html) {
 			//	Paginate all 'View' buttons
 			foreach ($Html->find("//div[@id='w0']/table[contains(@class,'table-striped')]/tbody/tr") as $element) {
