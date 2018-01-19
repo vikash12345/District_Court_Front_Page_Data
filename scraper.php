@@ -16,7 +16,7 @@ $BaseLink	=	'http://202.61.43.40:8080/';
 	
 	
 	//	Page pagination
-	for($PageLoop = 561; $PageLoop < $loop; $PageLoop++)
+	for($PageLoop = 1; $PageLoop < 2; $PageLoop++)
 	{
 		
 		$FinalURL  		=  'http://202.61.43.40:8080/index.php?r=site%2Fsearchbyfir&page='.$PageLoop;
@@ -69,7 +69,7 @@ $BaseLink	=	'http://202.61.43.40:8080/';
 						 $NameofIO			=	$DetailPg->find("//div[@class='container']/table[2]/tbody/tr[3]/td[2]", 0)->plaintext;
 						 $ChallanDetail 		=   	$DetailPg->find("//div[@class='container']/table[2]/tbody/tr[4]/td", 0)->plaintext;
 						 $FIRDesc 			= 	$DetailPg->find("//div[@class='container']/table[2]/tbody/tr[5]/td", 0)->plaintext;	
-						 $html_encoded = html_entity_decode($DetailPg); 
+						  
 						// $html_encoded = htmlentities($DetailPg);
 										
   
@@ -92,11 +92,11 @@ $BaseLink	=	'http://202.61.43.40:8080/';
 		   'challandetail' => $ChallanDetail,
 		   'firdesc' => $FIRDesc,
 		   'mainpage' => $FinalURL,
-		   'html_encoded' => $html_encoded,
+		   
 		   'caselink' => $CaseLink);
 						
 						
-           scraperwiki::save(array('caseno','instdte','instdtest','status','courtname2','caseflde','restrcode','uscode','fir','firreg','offence','caseproperty','nameofio','challandetail','firdesc','mainpage','html_encoded','caselink'), $record);
+           scraperwiki::save(array('caseno','instdte','instdtest','status','courtname2','caseflde','restrcode','uscode','fir','firreg','offence','caseproperty','nameofio','challandetail','firdesc','mainpage','caselink'), $record);
 				
 				}}}
 	}}
