@@ -20,7 +20,7 @@ $BaseLink	=	'http://202.61.43.40:8080/';
 	{
 		
 		$FinalURL  		=  'http://202.61.43.40:8080/index.php?r=site%2Fsearchbyfir&page='.$PageLoop;
-		echo "Page No = > " . "$PageLoop.\n";
+		echo "URL = > " . "$FinalURL.\n";
 		$Html		=	file_get_html($FinalURL);
 		sleep(10);
 		$RowNumb	=	-1;
