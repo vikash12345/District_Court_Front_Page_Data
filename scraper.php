@@ -19,8 +19,8 @@ $BaseLink	=	'http://202.61.43.40:8080/';
 	for($PageLoop = 1; $PageLoop < $loop; $PageLoop++)
 	{
 		
-		$FinalURL  		=  'http://202.61.43.40:8080/index.php?r=site%2Fsearchbyfir&page='.$PageLoop;
-		echo "Loopnum = > " . "$loop.\n";
+		  		=  'http://202.61.43.40:8080/index.php?r=site%2Fsearchbyfir&page='.$PageLoop;
+		echo "URL  - > 	" . "$FinalURL.\n";
 		$Html		=	file_get_html($FinalURL);
 		sleep(10);
 		$RowNumb	=	-1;
