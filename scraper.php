@@ -16,7 +16,7 @@ $BaseLink	=	'http://202.61.43.40:8080/';
 	
 	
 	//	 $loop Page pagination
-	for($PageLoop = 113; $PageLoop < $loop; $PageLoop++)
+	for($PageLoop = 174; $PageLoop < $loop; $PageLoop++)
 	{
 		
 		$FinalURL	=  'http://202.61.43.40:8080/index.php?r=site%2Fsearchbyfir&page='.$PageLoop;
