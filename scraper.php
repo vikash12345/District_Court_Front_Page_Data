@@ -1,14 +1,13 @@
 <?
-require 		'scraperwiki.php';
-require 		'scraperwiki/simple_html_dom.php';
-error_reporting(0);
-$BaseLink	=	'http://202.61.43.40:8080/';
+require 			'scraperwiki.php';
+require 			'scraperwiki/simple_html_dom.php';
+	$BaseLink	=	'http://202.61.43.40:8080/';
 	$SiteURL	=	'http://202.61.43.40:8080/index.php?r=site%2Fsearchbyfir&page=0';
 	sleep(5);
-	$Pagination = 	file_get_html($SiteURL);
-	$numberforloop = $Pagination->find("//*[@id='w0']/div/b[2]",0)->plaintext;
-	$text = str_replace(',', '', $numberforloop);
-	$loop = ceil($text/20);
+	$Pagination 	= 	file_get_html($SiteURL);
+	$numberforloop 		= $Pagination->find("//*[@id='w0']/div/b[2]",0)->plaintext;
+	$text 		= 	str_replace(',', '', $numberforloop);
+	$loop 		= 	ceil($text/20);
 	
 	
 	// echo $AllPages = (int)$numberforloop;
@@ -20,19 +19,16 @@ $BaseLink	=	'http://202.61.43.40:8080/';
 	{
 		
 		$FinalURL	=  'http://202.61.43.40:8080/index.php?r=site%2Fsearchbyfir&page='.$PageLoop;
-		echo "URL  - > 	" . "$FinalURL.\n";
 		$Html		=	file_get_html($FinalURL);
-		sleep(10);
 		$RowNumb	=	-1;
-		if ($Html) {
+		if ($Html) 
+		{
 			//	Paginate all 'View' buttons
 			foreach ($Html->find("//div[@id='w0']/table[contains(@class,'table-striped')]/tbody/tr") as $element) {
 				$RowNumb	+=	1;
 				if ($RowNumb != 0) {
-					sleep(2);
+					sleep(5);
 					$CourtName	=	$element->find('./td[2]', 0);
-					
-					
 					$CaseNumbr	=	$element->find('./td[3]', 0);
 					$CaseStats	=	$element->find('./td[4]', 0);
 					$CaseValue	=	$element->find('./td[5]/button', 0);
@@ -76,7 +72,7 @@ $BaseLink	=	'http://202.61.43.40:8080/';
 			/*	$record = array( 'caseno' => $CaseNo, 'instdte' => $instdte,);
 						scraperwiki::save(array('caseno' , 'instdte'), $record); */
 	
-				 $record = array( 'caseno' =>$CaseNo, 
+		    $record = array( 'caseno' =>$CaseNo, 
 		   'instdte' => $instdte,
 		   'instdtest' => $InstDte1st, 
 		   'status' => $Status, 
