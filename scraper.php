@@ -45,7 +45,9 @@ require 			'scraperwiki/simple_html_dom.php';
 			{
 					//	Visit link inside 'View' button
 					$DetailPg	=	file_get_html($URL);
-		  			sleep(5);
+			if($DetailPg)
+			{
+		  			sleep(7);
 						//	Assign fields to varilables
 							//This is for Case Details
 									
@@ -67,12 +69,6 @@ require 			'scraperwiki/simple_html_dom.php';
 						 $ChallanDetail 		=   	$DetailPg->find("//div[@class='container']/table[2]/tbody/tr[4]/td", 0)->plaintext;
 						 $FIRDesc 			= 	$DetailPg->find("//div[@class='container']/table[2]/tbody/tr[5]/td", 0)->plaintext;	
 						  
-						// $html_encoded = htmlentities($DetailPg);
-										
-  
-			/*	$record = array( 'caseno' => $CaseNo, 'instdte' => $instdte,);
-						scraperwiki::save(array('caseno' , 'instdte'), $record); */
-	
 		    $record = array( 'caseno' =>$CaseNo, 
 		   'instdte' => $instdte,
 		   'instdtest' => $InstDte1st, 
@@ -96,6 +92,7 @@ require 			'scraperwiki/simple_html_dom.php';
            scraperwiki::save(array('caseno','instdte','instdtest','status','courtname2','caseflde','restrcode','uscode','fir','firreg','offence','caseproperty','nameofio','challandetail','firdesc','mainpage','caselink'), $record);
 				
 				}}}
+				}
 	}}
 	
 	}	
